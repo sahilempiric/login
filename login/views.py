@@ -6,12 +6,12 @@ from django.contrib import messages
 def registration_view(request):
     # if request('No ! -------------------------',request.POST['age']) 
     if request.method == "POST":
-        user_name = request.POST['username']
-        first_name = request.POST['firstname']
-        last_name = request.POST['lastname']
-        email = request.POST['email']
-        pass_WORD = request.POST['password']
-        pass_WORD1 = request.POST['password']
+        user_name = request.POST.get('username')
+        first_name = request.POST.get('firstname')
+        last_name = request.POST.get('lastname')
+        email = request.POST.get('email')
+        pass_WORD = request.POST.get('password')
+        pass_WORD1 = request.POST.get('password')
 
         context = {
             'user_name' : user_name,
